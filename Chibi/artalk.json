@@ -1,0 +1,204 @@
+[
+  {
+    "name": "Pysio Chibi",
+    "type": "image",
+    "items": [
+      {
+        "key": "hi",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_hi.webp"
+      },
+      {
+        "key": "love",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_love.webp"
+      },
+      {
+        "key": "laugh",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_laugh.webp"
+      },
+      {
+        "key": "good_idea",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_good_idea.webp"
+      },
+      {
+        "key": "cheer_up",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_cheer_up.webp"
+      },
+      {
+        "key": "qwq",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_qwq.webp"
+      },
+      {
+        "key": "ok",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_ok.webp"
+      },
+      {
+        "key": "sorry",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sorry.webp"
+      },
+      {
+        "key": "wtf",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_wtf.webp"
+      },
+      {
+        "key": "thanks",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_thanks.webp"
+      },
+      {
+        "key": "good_job",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_good_job.webp"
+      },
+      {
+        "key": "baka",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_baka.webp"
+      },
+      {
+        "key": "aaaa",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_aaaa.webp"
+      },
+      {
+        "key": "question",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_question.webp"
+      },
+      {
+        "key": "drawing",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_drawing.webp"
+      },
+      {
+        "key": "sleeping",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sleeping.webp"
+      },
+      {
+        "key": "love_ww",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_love_ww.webp"
+      },
+      {
+        "key": "dizzy",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_dizzy.webp"
+      },
+      {
+        "key": "cool",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_cool.webp"
+      },
+      {
+        "key": "hmph",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_hmph.webp"
+      },
+      {
+        "key": "eating_melon",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_eating_melon.webp"
+      },
+      {
+        "key": "crying",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_crying.webp"
+      },
+      {
+        "key": "knife_laugh",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_knife_laugh.webp"
+      },
+      {
+        "key": "crazy",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_crazy.webp"
+      },
+      {
+        "key": "dots",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_dots.webp"
+      },
+      {
+        "key": "ascend",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_ascend.webp"
+      },
+      {
+        "key": "hungry",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_hungry.webp"
+      },
+      {
+        "key": "sugar_daddy",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sugar_daddy.webp"
+      },
+      {
+        "key": "giggle",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_giggle.webp"
+      },
+      {
+        "key": "hey",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_hey.webp"
+      },
+      {
+        "key": "mmm",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_mmm.webp"
+      },
+      {
+        "key": "wow",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_wow.webp"
+      },
+      {
+        "key": "sigh",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sigh.webp"
+      },
+      {
+        "key": "w_fireworks",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_w_fireworks.webp"
+      },
+      {
+        "key": "aaaa_shock",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_aaaa_shock.webp"
+      },
+      {
+        "key": "slacking",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_slacking.webp"
+      },
+      {
+        "key": "sweat",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sweat.webp"
+      },
+      {
+        "key": "singing",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_singing.webp"
+      },
+      {
+        "key": "streaming",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_streaming.webp"
+      },
+      {
+        "key": "noted",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_noted.webp"
+      },
+      {
+        "key": "sleep_love",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sleep_love.webp"
+      },
+      {
+        "key": "angry",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_angry.webp"
+      },
+      {
+        "key": "that_qwq",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_that_qwq.webp"
+      },
+      {
+        "key": "medicine",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_medicine.webp"
+      },
+      {
+        "key": "red_packet",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_red_packet.webp"
+      },
+      {
+        "key": "heartbreak",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_heartbreak.webp"
+      },
+      {
+        "key": "coo",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_coo.webp"
+      },
+      {
+        "key": "sour",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_sour.webp"
+      },
+      {
+        "key": "chips_cola",
+        "val": "https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/pysio_chibi_chips_cola.webp"
+      }
+    ]
+  }
+]

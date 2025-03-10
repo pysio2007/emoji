@@ -146,7 +146,7 @@
     <div id="app">
         <div class="banner">
             <h1>Pysio 表情包集合</h1>
-            <p>可爱的 Pysio 表情包，适用于 Waline 评论系统</p>
+            <p>可爱的 Pysio 表情包，适用于 Waline 和 Artalk 评论系统</p>
         </div>
 
         <div class="container">
@@ -196,8 +196,8 @@
                         <h3>CDN 访问地址</h3>
                         <p>
                             <span class="cdn-badge primary">国际 CDN</span>
-                            <el-tag type="info" size="large" @click="copyText('https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi')" style="cursor: pointer">
-                                https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi
+                            <el-tag type="info" size="large" @click="copyText('https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi')" style="cursor: pointer">
+                                https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi
                             </el-tag>
                         </p>
                         <p>
@@ -212,12 +212,43 @@
                         <div class="code-block">
                             <div class="code-block-header">javascript</div>
                             <pre><code class="language-javascript">emoji: [
-  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi',
+  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi',
   // 或者使用国内CDN
   // '//emoji.pysio.online/Chibi',
 ],</code></pre>
                             <button class="copy-btn" @click="copyConfig">复制</button>
                         </div>
+                        
+                        <h3>在 Artalk 中使用</h3>
+                        <p>在 Artalk 的配置中添加以下代码：</p>
+                        
+                        <h4>国际版 (jsDelivr CDN)</h4>
+                        <div class="code-block">
+                            <div class="code-block-header">javascript</div>
+                            <pre><code class="language-javascript">Artalk.init({
+  // ... 其他配置 ...
+  emoticons: 'https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/artalk.json',
+});</code></pre>
+                            <button class="copy-btn" @click="copyArtalkConfig('jsdelivr')">复制</button>
+                        </div>
+                        
+                        <h4>中国版</h4>
+                        <div class="code-block">
+                            <div class="code-block-header">javascript</div>
+                            <pre><code class="language-javascript">Artalk.init({
+  // ... 其他配置 ...
+  emoticons: 'https://emoji.pysio.online/Chibi/artalk_cn.json',
+});</code></pre>
+                            <button class="copy-btn" @click="copyArtalkConfig('cn')">复制</button>
+                        </div>
+                        
+                        <h3>配置文件说明</h3>
+                        <p>本项目提供了多种格式的配置文件，以适应不同的使用场景：</p>
+                        <ul>
+                            <li><strong>artalk.json</strong> - 使用 jsDelivr CDN 的标准配置</li>
+                            <li><strong>artalk_cn.json</strong> - 使用中国 CDN (emoji.pysio.online) 的配置</li>
+                            <li><strong>artalk_jsdelivr.json</strong> - 专门为 jsDelivr CDN 优化的配置</li>
+                        </ul>
                     </el-tab-pane>
                 </el-tabs>
             </el-card>
@@ -255,10 +286,26 @@
                 
                 const copyConfig = () => {
                     const config = `emoji: [
-  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi',
+  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi',
   // 或者使用国内CDN
   // '//emoji.pysio.online/Chibi',
 ],`;
+                    copyText(config);
+                };
+                
+                const copyArtalkConfig = (type) => {
+                    let config;
+                    if (type === 'jsdelivr') {
+                        config = `Artalk.init({
+  // ... 其他配置 ...
+  emoticons: 'https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.4/Chibi/artalk.json',
+});`;
+                    } else if (type === 'cn') {
+                        config = `Artalk.init({
+  // ... 其他配置 ...
+  emoticons: 'https://emoji.pysio.online/Chibi/artalk_cn.json',
+});`;
+                    }
                     copyText(config);
                 };
                 
@@ -291,7 +338,8 @@
                     emojiItems,
                     loading,
                     copyText,
-                    copyConfig
+                    copyConfig,
+                    copyArtalkConfig
                 };
             }
         };
