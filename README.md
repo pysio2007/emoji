@@ -99,7 +99,6 @@ Artalk.init({
 
 - **artalk.json** - 使用 jsDelivr CDN 的标准配置
 - **artalk_cn.json** - 使用中国 CDN (emoji.pysio.online) 的配置
-- **artalk_jsdelivr.json** - 专门为 jsDelivr CDN 优化的配置
 
 ## 📦 表情包预览
 
