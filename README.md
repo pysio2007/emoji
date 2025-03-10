@@ -2,9 +2,30 @@
 
 这是一个收集了Pysio可爱表情包的仓库。这些表情包可以用于个人非商业用途的交流和分享。
 
+## 仓库信息
+
+- 仓库地址: [pysio2007/emoji](https://github.com/pysio2007/emoji)
+- 当前版本: v1.0
+
+## CDN 访问
+
+您可以通过以下 CDN 地址访问表情包:
+
+```
+https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.0/
+```
+
+例如，访问 Chibi 系列的 HI 表情:
+
+```
+https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.0/Chibi/HI.webp
+```
+
 ## 许可说明
 
 本仓库中的所有表情包均采用 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE) 进行授权。
+
+![CC BY-NC-SA 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
 这意味着您可以：
 - 分享 - 复制和重新分发这些表情包
