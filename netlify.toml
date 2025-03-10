@@ -1,0 +1,35 @@
+[build]
+  # 指定构建命令，这里我们不需要构建，因为是静态文件
+  command = "echo 'No build required'"
+  # 指定要发布的目录
+  publish = "."
+
+# 配置重定向和头信息
+[[headers]]
+  # 为所有文件定义头信息
+  for = "/*"
+  [headers.values]
+    # 允许跨域访问
+    Access-Control-Allow-Origin = "*"
+    # 缓存策略
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 为webp文件特别配置
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Content-Type = "image/webp"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 为json文件特别配置
+[[headers]]
+  for = "*.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Cache-Control = "public, max-age=3600"
+
+# 配置404页面
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404 

@@ -5,20 +5,46 @@
 ## 仓库信息
 
 - 仓库地址: [pysio2007/emoji](https://github.com/pysio2007/emoji)
-- 当前版本: v1.0
+- 当前版本: v1.3
 
 ## CDN 访问
 
 您可以通过以下 CDN 地址访问表情包:
 
-```
-https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.0/
-```
-
-例如，访问 Chibi 系列的 HI 表情:
+### 国际 CDN (jsDelivr)
 
 ```
-https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.0/Chibi/HI.webp
+https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/
+```
+
+例如，访问 Chibi 系列的 hi 表情:
+
+```
+https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi/pysio_chibi_hi.webp
+```
+
+### 国内 CDN
+
+```
+https://emoji.pysio.online/
+```
+
+例如，访问 Chibi 系列的 hi 表情:
+
+```
+https://emoji.pysio.online/Chibi/pysio_chibi_hi.webp
+```
+
+## 在 Waline 中使用
+
+在 Waline 的配置中添加以下代码：
+
+```js
+emoji: [
+  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi',
+  // 或者使用国内CDN
+  // '//emoji.pysio.online/Chibi',
+],
 ```
 
 ## 许可说明
@@ -49,3 +75,7 @@ https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.0/Chibi/HI.webp
 ## 联系方式
 
 如有任何问题或建议，欢迎提出 issue 或通过其他方式与我们联系。
+
+---
+
+© 2025 Pysio 表情包集合

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面未找到</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #6a11cb;
+            font-weight: 700;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin: 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .emoji-container {
+            margin: 30px 0;
+            position: relative;
+            height: 200px;
+        }
+        .emoji {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .emoji-shadow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 20px;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            animation: shadow 3s ease-in-out infinite;
+        }
+        @keyframes shadow {
+            0% { transform: translateX(-50%) scale(1); opacity: 0.4; }
+            50% { transform: translateX(-50%) scale(0.8); opacity: 0.2; }
+            100% { transform: translateX(-50%) scale(1); opacity: 0.4; }
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(106, 17, 203, 0.5);
+        }
+        .btn:active {
+            transform: translateY(1px);
+        }
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation-name: particleAnimation;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes particleAnimation {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-1000px) rotate(720deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="particles">
+            <div v-for="(particle, index) in particles" :key="index" 
+                 class="particle"
+                 :style="{
+                     left: particle.x + 'px',
+                     top: particle.y + 'px',
+                     width: particle.size + 'px',
+                     height: particle.size + 'px',
+                     backgroundColor: particle.color,
+                     animationDuration: particle.duration + 's',
+                     animationDelay: particle.delay + 's'
+                 }">
+            </div>
+        </div>
+        
+        <div class="container">
+            <p class="error-code">404</p>
+            <h1>页面未找到</h1>
+            
+            <div class="emoji-container">
+                <img :src="randomEmoji" alt="表情" class="emoji">
+                <div class="emoji-shadow"></div>
+            </div>
+            
+            <p>哎呀！您访问的页面不存在或已被移动。</p>
+            <p>这里是 Pysio 表情包仓库，您可能是想要查看我们的表情包？</p>
+            
+            <a href="/" class="btn">
+                <el-icon><el-icon-back /></el-icon> 返回首页
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref, onMounted, computed } = Vue;
+        
+        const App = {
+            setup() {
+                const particles = ref([]);
+                const emojis = ref([
+                    'Chibi/pysio_chibi_question.webp',
+                    'Chibi/pysio_chibi_疑问.webp',
+                    'Chibi/pysio_chibi_wow.webp',
+                    'Chibi/pysio_chibi_哇.webp',
+                    'Chibi/pysio_chibi_dizzy.webp',
+                    'Chibi/pysio_chibi_晕.webp'
+                ]);
+                
+                const randomEmoji = computed(() => {
+                    const randomIndex = Math.floor(Math.random() * emojis.value.length);
+                    return emojis.value[randomIndex];
+                });
+                
+                const createParticles = () => {
+                    const colors = ['#6a11cb', '#2575fc', '#a239ca', '#4e54c8', '#8f94fb'];
+                    const particleCount = 30;
+                    
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.value.push({
+                            x: Math.random() * window.innerWidth,
+                            y: Math.random() * window.innerHeight,
+                            size: Math.random() * 10 + 5,
+                            color: colors[Math.floor(Math.random() * colors.length)],
+                            duration: Math.random() * 20 + 10,
+                            delay: Math.random() * 5
+                        });
+                    }
+                };
+                
+                onMounted(() => {
+                    createParticles();
+                });
+                
+                return {
+                    particles,
+                    randomEmoji
+                };
+            }
+        };
+        
+        const app = createApp(App);
+        app.use(ElementPlus);
+        app.mount('#app');
+    </script>
+</body>
+</html> 

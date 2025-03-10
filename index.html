@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pysio 表情包集合</title>
+    <!-- 引入Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- 引入Element Plus -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <script src="https://unpkg.com/element-plus"></script>
+    <!-- 引入图标 -->
+    <link rel="stylesheet" href="https://unpkg.com/@element-plus/icons-vue/dist/index.css">
+    <!-- 引入Prism.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .emoji-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .emoji-item img:hover {
+            transform: scale(1.1);
+        }
+        .emoji-name {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #34495e;
+            text-align: center;
+        }
+        .code-block {
+            background-color: #2d2d2d;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            position: relative;
+        }
+        .code-block code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+        }
+        .code-block-header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 4px 8px;
+            border-radius: 0 6px 0 6px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        .cdn-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .cdn-badge.primary {
+            background-color: #409eff;
+            color: white;
+        }
+        .cdn-badge.success {
+            background-color: #67c23a;
+            color: white;
+        }
+        .banner {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+        .banner h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ccc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        /* 添加动画效果 */
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.3s;
+        }
+        .fade-enter-from, .fade-leave-to {
+            opacity: 0;
+        }
+        .emoji-grid-enter-active {
+            transition: all 0.3s ease-out;
+        }
+        .emoji-grid-leave-active {
+            transition: all 0.3s ease-in;
+        }
+        .emoji-grid-enter-from, .emoji-grid-leave-to {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .emoji-grid-move {
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="banner">
+            <h1>Pysio 表情包集合</h1>
+            <p>可爱的 Pysio 表情包，适用于 Waline 评论系统</p>
+        </div>
+
+        <div class="container">
+            <el-card class="box-card" shadow="hover">
+                <template #header>
+                    <div class="card-header">
+                        <el-row justify="space-between" align="middle">
+                            <el-col :span="12">
+                                <h2><el-icon><el-icon-collection></el-icon-collection></el-icon> Chibi 系列</h2>
+                            </el-col>
+                            <el-col :span="12" style="text-align: right">
+                                <el-button type="primary" @click="copyConfig">
+                                    <el-icon><el-icon-document-copy></el-icon-document-copy></el-icon> 复制配置
+                                </el-button>
+                            </el-col>
+                        </el-row>
+                    </div>
+                </template>
+                
+                <el-tabs type="border-card">
+                    <el-tab-pane label="表情预览">
+                        <el-empty v-if="loading" description="加载中..."></el-empty>
+                        <transition-group name="emoji-grid" tag="div" v-else>
+                            <el-row :gutter="16">
+                                <el-col :xs="8" :sm="6" :md="4" :lg="3" v-for="item in emojiItems" :key="item">
+                                    <div class="emoji-item">
+                                        <el-image 
+                                            :src="`Chibi/pysio_chibi_${item}.webp`" 
+                                            :alt="item"
+                                            lazy
+                                            :preview-src-list="[`Chibi/pysio_chibi_${item}.webp`]">
+                                            <template #error>
+                                                <div class="image-error">
+                                                    <el-icon><el-icon-picture-filled /></el-icon>
+                                                    <p>加载失败</p>
+                                                </div>
+                                            </template>
+                                        </el-image>
+                                        <div class="emoji-name">{{ item }}</div>
+                                    </div>
+                                </el-col>
+                            </el-row>
+                        </transition-group>
+                    </el-tab-pane>
+                    
+                    <el-tab-pane label="使用说明">
+                        <h3>CDN 访问地址</h3>
+                        <p>
+                            <span class="cdn-badge primary">国际 CDN</span>
+                            <el-tag type="info" size="large" @click="copyText('https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi')" style="cursor: pointer">
+                                https://cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi
+                            </el-tag>
+                        </p>
+                        <p>
+                            <span class="cdn-badge success">国内 CDN</span>
+                            <el-tag type="info" size="large" @click="copyText('https://emoji.pysio.online/Chibi')" style="cursor: pointer">
+                                https://emoji.pysio.online/Chibi
+                            </el-tag>
+                        </p>
+                        
+                        <h3>在 Waline 中使用</h3>
+                        <p>在 Waline 的配置中添加以下代码：</p>
+                        <div class="code-block">
+                            <div class="code-block-header">javascript</div>
+                            <pre><code class="language-javascript">emoji: [
+  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi',
+  // 或者使用国内CDN
+  // '//emoji.pysio.online/Chibi',
+],</code></pre>
+                            <button class="copy-btn" @click="copyConfig">复制</button>
+                        </div>
+                    </el-tab-pane>
+                </el-tabs>
+            </el-card>
+        </div>
+
+        <el-divider></el-divider>
+        
+        <footer class="container" style="text-align: center">
+            <p>© 2025 Pysio 表情包集合 | <a href="https://github.com/pysio2007/emoji">GitHub 仓库</a></p>
+            <div>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+                </a>
+            </div>
+        </footer>
+        
+        <el-backtop></el-backtop>
+    </div>
+
+    <script>
+        const { createApp, ref, onMounted, nextTick } = Vue;
+        
+        const App = {
+            setup() {
+                const emojiItems = ref([]);
+                const loading = ref(true);
+                
+                const copyText = (text) => {
+                    navigator.clipboard.writeText(text).then(() => {
+                        ElementPlus.ElMessage.success('已复制到剪贴板');
+                    }).catch(() => {
+                        ElementPlus.ElMessage.error('复制失败');
+                    });
+                };
+                
+                const copyConfig = () => {
+                    const config = `emoji: [
+  '//cdn.jsdelivr.net/gh/pysio2007/emoji@v1.3/Chibi',
+  // 或者使用国内CDN
+  // '//emoji.pysio.online/Chibi',
+],`;
+                    copyText(config);
+                };
+                
+                const initPrism = () => {
+                    // 确保在DOM更新后再初始化Prism
+                    nextTick(() => {
+                        if (window.Prism) {
+                            Prism.highlightAll();
+                        }
+                    });
+                };
+                
+                onMounted(async () => {
+                    try {
+                        const response = await fetch('Chibi/info.json');
+                        const data = await response.json();
+                        emojiItems.value = data.items;
+                        
+                        // 初始化Prism.js
+                        initPrism();
+                    } catch (error) {
+                        console.error('加载表情包失败:', error);
+                        ElementPlus.ElMessage.error('加载表情包失败，请刷新页面重试');
+                    } finally {
+                        loading.value = false;
+                    }
+                });
+                
+                return {
+                    emojiItems,
+                    loading,
+                    copyText,
+                    copyConfig
+                };
+            }
+        };
+        
+        const app = createApp(App);
+        app.use(ElementPlus);
+        app.mount('#app');
+    </script>
+</body>
+</html> 
