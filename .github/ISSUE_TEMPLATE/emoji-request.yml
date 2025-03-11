@@ -1,0 +1,39 @@
+name: 表情请求
+description: 请求添加新的表情
+title: "[表情请求] "
+labels: ["表情请求"]
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 请确认以下事项
+      options:
+        - label: 这是一个个人项目，请求需要较长时间处理，请耐心等待
+          required: false
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: 表情描述
+      description: 请详细描述您想要的表情
+      placeholder: 请在此处详细描述您想要的表情，包括表情的含义、使用场景等
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reference
+    attributes:
+      label: 参考图/LOGO
+      description: 请提供表情的参考图或LOGO
+      placeholder: 请在此处上传或提供表情的参考图片链接
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: 其他信息
+      description: 请提供任何其他相关信息
+      placeholder: 可选：提供任何其他您认为有助于实现此表情的信息
+    validations:
+      required: false 

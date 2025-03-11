@@ -1,0 +1,104 @@
+name: DMCA Takedown Request
+description: Submit a DMCA takedown request as a copyright owner
+title: "[DMCA] "
+labels: ["DMCA"]
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Please confirm the following
+      options:
+        - label: I am the copyright owner or am authorized to act on behalf of the copyright owner
+          required: true
+        - label: I have identified the content that allegedly infringes my copyright
+          required: true
+        - label: I understand this is a personal project and processing may take some time
+          required: true
+  
+  - type: textarea
+    id: copyrighted_work
+    attributes:
+      label: Identification of Copyrighted Work
+      description: Please identify the copyrighted work that you believe has been infringed
+      placeholder: Please provide a detailed description of the original copyrighted work
+    validations:
+      required: true
+  
+  - type: textarea
+    id: infringing_material
+    attributes:
+      label: Identification of Allegedly Infringing Material
+      description: Please identify the material that you allege is infringing upon the copyrighted work
+      placeholder: Please provide specific URLs or file paths of the allegedly infringing material
+    validations:
+      required: true
+  
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Your full legal name
+      placeholder: John Doe
+    validations:
+      required: true
+  
+  - type: input
+    id: company
+    attributes:
+      label: Company (if applicable)
+      description: Your company name if you are representing a company
+      placeholder: Example Corp.
+    validations:
+      required: false
+  
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      description: Your contact email
+      placeholder: example@example.com
+    validations:
+      required: true
+  
+  - type: input
+    id: phone
+    attributes:
+      label: Phone (optional)
+      description: Your contact phone number
+      placeholder: +1 (555) 123-4567
+    validations:
+      required: false
+  
+  - type: checkboxes
+    id: good_faith
+    attributes:
+      label: Statement of Good Faith
+      options:
+        - label: I have a good faith belief that the use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law
+          required: true
+  
+  - type: checkboxes
+    id: accuracy
+    attributes:
+      label: Statement of Accuracy
+      options:
+        - label: The information in this notification is accurate, and under penalty of perjury, I am the owner, or authorized to act on behalf of the owner, of an exclusive right that is allegedly infringed
+          required: true
+  
+  - type: input
+    id: signature
+    attributes:
+      label: Electronic Signature
+      description: Please provide your electronic signature (full legal name)
+      placeholder: John Doe
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Please provide any additional relevant information
+      placeholder: Optional - Any other information that might be helpful in processing your request
+    validations:
+      required: false 

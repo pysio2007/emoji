@@ -1,0 +1,48 @@
+name: IX请求
+description: 请求添加新的互联网交换中心(IX)图片
+title: "[IX请求] "
+labels: ["IX请求"]
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 请确认以下事项
+      options:
+        - label: 这是一个个人项目，请求需要较长时间处理，请耐心等待
+          required: false
+  
+  - type: input
+    id: ix_name
+    attributes:
+      label: IX名称
+      description: 请提供IX的完整名称
+      placeholder: 例如：Amsterdam Internet Exchange
+    validations:
+      required: true
+  
+  - type: input
+    id: peeringdb
+    attributes:
+      label: PeeringDB界面
+      description: 请提供IX的PeeringDB界面链接
+      placeholder: 例如：https://www.peeringdb.com/ix/...
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reference
+    attributes:
+      label: LOGO/参考图
+      description: 请提供IX的LOGO或参考图
+      placeholder: 请在此处上传或提供LOGO/参考图片链接
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: 其他信息
+      description: 请提供任何其他相关信息
+      placeholder: 可选：提供任何其他您认为有助于处理此请求的信息，如IX的位置、规模等
+    validations:
+      required: false 
