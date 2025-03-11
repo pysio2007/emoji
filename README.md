@@ -1,5 +1,8 @@
 # Pysio 表情包集合
 
+> **DMCA Notice**: If you believe that content in this repository infringes your copyright, please submit a [DMCA Takedown Request](https://github.com/pysio2007/emoji/issues/new?template=dmca-takedown.md) to us first rather than contacting GitHub directly. We appreciate your understanding and cooperation.  
+> **DMCA 声明**：如果您认为本仓库中的内容侵犯了您的版权，请先通过[DMCA 下架申请](https://github.com/pysio2007/emoji/issues/new?template=dmca-takedown.md)联系我们，而非直接联系GitHub。感谢您的理解与配合。
+
 <div align="center">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e243fc1d-1288-434a-ab58-15ff156b6d5b/deploy-status)](https://app.netlify.com/sites/pysio-emoji/deploys)
